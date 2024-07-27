@@ -1,0 +1,42 @@
+.cajita{
+    padding-top: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.texto3{
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.linea{
+    border: 1px solid #dbd5d5;
+    margin-bottom: 30px;
+}
+
+.tabla1{
+    margin-left: 150px;
+    margin-right: 150px;
+    text-align: center;
+}
+
+
+
+.cantidad{
+    width: 80px;
+    border-radius: 5px;
+    border-color: #a720e6;
+}
+
+.btn1{
+    color: #a720e6;
+    font-weight: bold;
+}
+
+.btn2{
+    color: #a720e6;
+    border: none;
+    display: flex;
+    text-align: center;
+}

@@ -1,0 +1,19 @@
+:root{
+    --color-gris:#e8e8e8;
+    --color-morado:#2e017c;
+
+}
+
+
+
+.buscar{
+    background-color: var(--color-gris) !important;
+}
+
+.buscar:hover{
+    background-color: #b1b1b1;
+}
+
+.ayuda ul{
+    padding-left: 160px ;
+}

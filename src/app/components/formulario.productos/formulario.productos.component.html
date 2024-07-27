@@ -1,0 +1,17 @@
+
+<form [formGroup]="formProductos" (ngSubmit)="guardarInformacion()">
+    <div class="input-group">
+        <input type="text" class="form-control" id="imagen"
+            aria-describedby="inputGroupFileAddon04" aria-label="Upload" formControlName="imagen">
+    </div>
+    <div class="py-3">
+        <input type="text" class="form-control" placeholder="Nombre del producto"
+            aria-label="Nombre del producto" formControlName="producto">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control"
+            aria-label="Dollar amount (with dot and two decimal places)" placeholder="PRECIO" formControlName="precio">
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

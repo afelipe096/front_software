@@ -1,0 +1,91 @@
+<section>
+    <div class="row mt-2 text-center">
+        <div class="col-sm-8">
+            <div class="row row-cols-md-3 g-4 ms-4">
+                <div class="col">
+                    <div class="card btn" style="width: 17rem;">
+                        <div class="card-body  text-start">
+                            <img src="/img/gris_280x280.png" class="mb-2 ms-0 pe-1 " width="230" alt="">
+                            <h5 class="card-title titulo">PRODUCTO</h5>
+                            <p class="card-text">$PRECIO DEL PRODUCTO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="col-md-4 rounded-start caja-fondo">
+                <div class="card barra-pedidos" style="width: 18rem;">
+                    <div class="ms-4 mt-3 text-start fs-1 fw-bold">
+                        <p>Pedido</p>
+                    </div>
+                    <div class="fs-2 d-flex justify-content-around mt-4 mb-5">
+                        <p>Productos</p>
+                        <p>Cantidad</p>
+                    </div>
+                    <div class="linea"></div>
+                    <div class="d-flex justify-content-around my-2">
+                        <p class="fs-4">item 1</p>
+                        <div class="btn-toolbar align-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                            <button type="button" class="btn btn-dark mas_menos"><i class="fa-solid fa-minus"></i></button>
+                            <p class="fs-4 mx-2">0</p>
+                            <button type="button" class="btn btn-dark mas_menos"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="linea3"></div>
+                    <div>
+                        <p class="fs-2 fw-bold mt-1">Total: $</p>
+                    </div>
+                    <div class="mt-5 boton-pedido">
+                        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5 d-flex" id="exampleModalToggleLabel">Total a pagar:
+                                            <p class="fs-3 ms-2 fw-bold">$</p>
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body fw-semibold fs-5 text-start">
+                                        <p class="fw-bold">Métodos de pago</p>
+                                        <div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Efectivo
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Tarjeta débito o crédito
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                                <label class="form-check-label" for="flexRadioDefault3">
+                                                    Nequi o Daviplata
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Proceder al pago</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                            </div>
+                        </div>
+                        <div class="" style="margin-top: 50%;">
+                            <button class="btn btn-dark fs-5 mt-5 "  data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Hacer pedido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
