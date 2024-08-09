@@ -1,0 +1,33 @@
+
+.pagina-principal{
+    height: 680px;
+}
+.imagen_mano{
+    width: 690px;
+    height: 690px;
+}
+.titulo{
+    font-size: 70px;
+    line-height: 60px;
+}
+.parrafo{
+    font-size: 40px;
+    line-height: 40px;
+    color: #0000006f;
+}
+.botonend{
+    margin-top: 40%;
+    width: 180px;
+    height: 50px;
+}
+.pagina-secundaria{
+    height: 740px;
+    width: 1400px;
+}
+.video_footer{
+
+}
+.pvideo{
+    font-size: 90px;
+
+}
