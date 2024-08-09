@@ -7,7 +7,7 @@ import { productos } from '../components/models/productos';
 })
 export class ApiGeneralService {
     urlApi: string = 'http://3.145.120.149:5200/api/facturacion';
-    seLogueo: any = false
+    seLogueo: any = true
 
 
     constructor(private http: HttpClient) { }
