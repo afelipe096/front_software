@@ -1,6 +1,11 @@
-.fondo-card-1{
-    width: 140px;
-    height: 150px;
+
+.card_prodcutos{
+    width: 270px;
+    height: 350px;
+}
+.card_imagen{
+    width: 240px;
+    height: 200px;
 }
 
 .boton-ejemplo{

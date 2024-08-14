@@ -24,10 +24,36 @@
     height: 740px;
     width: 1400px;
 }
-.video_footer{
+.p-funciona{
+    margin-right: 80px;
 
 }
 .pvideo{
-    font-size: 90px;
+    font-size: 100px;
+    margin-left: 120px;
+    line-height: 90px;
+    margin-bottom: 220px;
+    margin-right: 150px;
 
+}
+.video{
+    margin-bottom: 20px;
+
+}
+.p-escribeme{
+    font-size: 40px;
+    line-height: 40px;
+    width: 460px;
+    color: #009F10;
+    margin-top: 20px;
+}
+.input-escribenos{
+    width: 280px;
+    margin-top: 80px;
+}
+.logos{
+    height: 70px;
+}
+.logosx{
+    height: 60px;
 }

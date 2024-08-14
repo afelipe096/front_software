@@ -28,7 +28,9 @@ export class AgregarProductoComponent {
             this.dataProductos = data
             console.log(this.dataProductos);
 
-        })
+
+        }) ;
+
     }
 
 }
