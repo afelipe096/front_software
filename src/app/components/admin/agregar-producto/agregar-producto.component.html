@@ -9,14 +9,14 @@
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">...<div class="row mt-4">
     <div class="COL-12">
-        <div class="row row-cols-md-4 g-4 ms-4">
+        <div class="row row-cols-md-4 g-3 ms-5">
             @for (producto of dataProductos; track $index) {
-            <div class="col card m-1">
-                <div class="card-body me-3 text-start">
+            <div class=" card m-1 card_prodcutos">
+                <div class="p-1 card-body text-start">
                     <img
                         [src]="producto.imagen"
-                        width="300"
-                        class="mb-1 p-0"
+                        width=""
+                        class="card_imagen rounded-2"
                         alt=""
                     />
                     <h5 class="card-title titulo">{{ producto.producto }}</h5>
@@ -71,4 +71,3 @@
     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
 
 </div>
-

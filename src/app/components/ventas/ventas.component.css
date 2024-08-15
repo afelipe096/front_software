@@ -1,8 +1,10 @@
-.fondo-card-1{
-    background-color: #ffffff ;
-
-    width: 140px;
-    height: 150px;
+.card_prodcutos{
+    width: 270px;
+    height: 300px;
+}
+.card_imagen{
+    width: 240px;
+    height: 200px;
 }
 
 .boton-ejemplo{
