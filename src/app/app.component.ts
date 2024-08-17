@@ -21,7 +21,7 @@ export class AppComponent {
 
     }
 
-    ngOnInit():void{
-        this.usuarioLoguiado = this._servicioApi.obtenerStatusLogin()
-    }
+    // ngOnInit():void{
+    //     this.usuarioLoguiado = this._servicioApi.Login()
+    // }
 }

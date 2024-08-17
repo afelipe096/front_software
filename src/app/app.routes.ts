@@ -4,6 +4,8 @@ import { EstadisticasComponent } from './components/admin/estadisticas/estadisti
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { InventarioComponent } from './components/admin/inventario/inventario.component';
 import { VentasComponent } from './components/ventas/ventas.component';
+import { FormularioInicioComponent } from './components/admin/formulario-inicio/formulario-inicio.component';
+import { FormularioRegistroComponent } from './components/admin/formulario-registro/formulario-registro.component';
 
 
 
@@ -17,4 +19,7 @@ export const routes: Routes = [
     { path: "contacto", component: ContactoComponent },
     { path: "inventario", component: InventarioComponent},
     { path: "ventas", component: VentasComponent},
+    { path: "login", component: FormularioInicioComponent},
+    { path: "registro", component: FormularioRegistroComponent},
+
 ];
