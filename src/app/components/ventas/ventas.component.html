@@ -1,27 +1,22 @@
 <section class="">
-    <div class=" mt-2 text-center d-flex ">
-        <div class=" ms-2 mt-3">
+    <div class="mt-2 text-center d-flex">
+        <div class="ms-2 mt-3">
             <div class="row row-cols-md-4 col-10 ms-3  ">
                 @for (producto of dataProductos; track $index) {
-                <div class=" card m-1 card_prodcutos btn">
-                    <div class="card-body ps-1 pt-3 me-3 text-start">
-                        <img
-                            [src]="producto.imagen"
-                            width=""
-                            class="card_imagen d-flex justify-content-end rounded-2"
-                            alt=""
-                        />
-                        <h5 class="card-title titulo">{{ producto.producto }}</h5>
-                        <p class="card-text">${{ producto.precio }}</p>
+                    <div class="card m-1 card_prodcutos btn cardventas" (click)="agregarProductoLS({nombre: producto.producto, valor: producto.precio, cantidad:null})">
+                        <div class="card-body ps-1 pt-3 me-3 text-start">
+                            <img [src]="producto.imagen" width="" class="card_imagen d-flex justify-content-end rounded-2" alt="" />
+                            <h5 class="card-title titulo">{{ producto.producto }}</h5>
+                            <p class="card-text">${{ producto.precio }}</p>
+                        </div>
                     </div>
-                </div>
                 }
             </div>
         </div>
 
-        <div class="col-sm-4 ">
+        <div class="col-sm-4">
             <div class="col-md-4 rounded-start caja-fondo">
-                <div class="card barra-pedidos" style="width: 18rem;">
+                <div class="card barra-pedidos" style="width: 18rem">
                     <div class="ms-4 mt-3 text-start fs-1 fw-bold">
                         <p>Pedido</p>
                     </div>
@@ -30,24 +25,32 @@
                         <p>Cantidad</p>
                     </div>
                     <div class="linea"></div>
-                    <div class="d-flex justify-content-around my-2">
-                        <p class="fs-4">item 1</p>
-                        <div class="btn-toolbar align-content-center" role="toolbar" aria-label="Toolbar with button groups">
-                            <button type="button" class="btn btn-dark mas_menos"><i class="fa-solid fa-minus"></i></button>
-                            <p class="fs-4 mx-2">0</p>
-                            <button type="button" class="btn btn-dark mas_menos"><i class="fa-solid fa-plus"></i></button>
+
+
+                    @for (prodCarrito of carritoActual; track $index) {
+                        <div class="d-flex justify-content-around my-2">
+                            <p class="fs-4">{{ prodCarrito.nombre }} - ${{ prodCarrito.valor * prodCarrito.cantidad }}</p>
+                            <div class="btn-toolbar align-content-center" role="toolbar" aria-label="Toolbar with button groups">
+                                <button type="button" class="btn btn-dark mas_menos" (click)="modificarProductoResumen('restar', prodCarrito.cantidad, $index)"><i class="fa-solid fa-minus"></i></button>
+                                <p class="fs-4 mx-2">{{prodCarrito.cantidad}}</p>
+                                <button type="button" class="btn btn-dark mas_menos" (click)="modificarProductoResumen('sumar', prodCarrito.cantidad, $index)"><i class="fa-solid fa-plus"></i></button>
+                            </div>
                         </div>
-                    </div>
+                    }
+
+
+
                     <div class="linea3"></div>
                     <div>
-                        <p class="fs-2 fw-bold mt-1">Total: $</p>
+                        <p class="fs-2 fw-bold mt-1">Total: {{totalCompra | currency:'USD':'symbol':'1.0-0'}}</p>
                     </div>
                     <div class="mt-5 boton-pedido">
                         <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5 d-flex" id="exampleModalToggleLabel">Total a pagar:
+                                        <h1 class="modal-title fs-5 d-flex" id="exampleModalToggleLabel">
+                                            Total a pagar:
                                             <p class="fs-3 ms-2 fw-bold">$</p>
                                         </h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -56,22 +59,16 @@
                                         <p class="fw-bold">Métodos de pago</p>
                                         <div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                                <label class="form-check-label" for="flexRadioDefault1">
-                                                    Efectivo
-                                                </label>
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                                                <label class="form-check-label" for="flexRadioDefault1">Efectivo</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                                                <label class="form-check-label" for="flexRadioDefault2">
-                                                    Tarjeta débito o crédito
-                                                </label>
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
+                                                <label class="form-check-label" for="flexRadioDefault2">Tarjeta débito o crédito</label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                                                <label class="form-check-label" for="flexRadioDefault3">
-                                                    Nequi o Daviplata
-                                                </label>
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" />
+                                                <label class="form-check-label" for="flexRadioDefault3">Nequi o Daviplata</label>
                                             </div>
                                         </div>
                                     </div>
@@ -82,11 +79,10 @@
                             </div>
                         </div>
                         <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-                            <div class="modal-dialog modal-dialog-centered">
-                            </div>
+                            <div class="modal-dialog modal-dialog-centered"></div>
                         </div>
-                        <div class="" style="margin-top: 50%;">
-                            <button class="btn btn-dark fs-5 mt-5 "  data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Hacer pedido</button>
+                        <div class="" style="margin-top: 50%">
+                            <button class="btn btn-dark fs-5 mt-5" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Hacer pedido</button>
                         </div>
                     </div>
                 </div>

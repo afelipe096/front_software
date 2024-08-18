@@ -12,3 +12,12 @@ constructor(imagen: string, producto: string, precio: string){
 }
 
 }
+
+export class inventario{
+    _id?: string
+    cantidad: string
+
+    constructor(cantidad:string){
+        this.cantidad = cantidad
+    }
+}
