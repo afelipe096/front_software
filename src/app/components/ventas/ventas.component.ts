@@ -89,13 +89,12 @@ export class VentasComponent {
 
         // Agregar el nuevo pedido con sus detalles y el total de la compra
         const nuevaCompra = {
-            detalles: this.carritoActual.map((producto: any) => `${producto.nombre} x${producto.cantidad}`),
+            detalles: this.carritoActual.map((producto: any) => `${producto.nombre} $${producto.valor} x${producto.cantidad}`),
             total: this.totalCompra
         };
 
         comprasGuardadas.push(nuevaCompra);
 
-        // Guardar nuevamente la lista en el localStorage
         localStorage.setItem('compras', JSON.stringify(comprasGuardadas));
     }
 }

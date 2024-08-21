@@ -18,7 +18,7 @@
                                 <h5 class="card-title titulo">{{ producto.producto }}</h5>
                                 <p class="card-text">${{ producto.precio }}</p>
                                 <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Editar</button>
-                                <button class="btn btn-danger ms-5 " (click)="eliminarproducto(producto.id)">Eliminar</button>
+                                <button class="btn btn-danger ms-5 " (click)="eliminarproducto(producto._id)">Eliminar</button>
                             </div>
                         </div>
                     }
