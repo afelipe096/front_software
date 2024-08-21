@@ -8,8 +8,10 @@ import { EstadisticasComponent } from './components/admin/estadisticas/estadisti
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { InventarioComponent } from './components/admin/inventario/inventario.component';
 import { VentasComponent } from './components/ventas/ventas.component';
+import { PedidosComponenteComponent } from './components/pedidos/pedidos-componente.component';
 import { FormularioInicioComponent } from './components/admin/formulario-inicio/formulario-inicio.component';
 import { FormularioRegistroComponent } from './components/admin/formulario-registro/formulario-registro.component';
+
 
 export const routes: Routes = [
     { path: 'crear-producto', component: AgregarProductoComponent },
@@ -19,5 +21,6 @@ export const routes: Routes = [
     { path: 'ventas', component: VentasComponent },
     { path: 'login', component: FormularioInicioComponent },
     { path: 'registro', component: FormularioRegistroComponent },
+    { path: 'pedidos', component: PedidosComponenteComponent },
     { path: '', redirectTo: '/login', pathMatch: 'full' } // Ruta por defecto
 ];

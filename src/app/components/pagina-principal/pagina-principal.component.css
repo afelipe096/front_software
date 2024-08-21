@@ -21,7 +21,7 @@
     height: 50px;
 }
 .pagina-secundaria{
-    height: 740px;
+    height: 660px;
     width: 1400px;
 }
 .p-funciona{
@@ -32,9 +32,28 @@
     font-size: 100px;
     margin-left: 120px;
     line-height: 90px;
-    margin-bottom: 220px;
+    margin-bottom: 210px;
     margin-right: 150px;
 
+
+}
+.video{
+    margin-bottom: -50px;
+
+}
+.p-escribeme{
+    font-size: 40px;
+    line-height: 40px;
+    width: 460px;
+    color: #009F10;
+    margin-top: 20px;
+}
+.input-escribenos{
+    width: 280px;
+    margin-top: 80px;
+}
+.logos{
+    height: 70px;
 }
 .video{
     margin-bottom: 20px;

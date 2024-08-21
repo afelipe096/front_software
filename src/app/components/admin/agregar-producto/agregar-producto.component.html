@@ -1,74 +1,45 @@
-
 <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
-        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
-        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">categoria 2</button>
+        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">categoria 3</button>
     </div>
 </nav>
 <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">...<div class="row mt-4">
-    <div class="COL-12">
-        <div class="row row-cols-md-4 g-3 ms-5">
-            @for (producto of dataProductos; track $index) {
-            <div class=" card m-1 card_prodcutos">
-                <div class="p-1 card-body text-start">
-                    <img
-                        [src]="producto.imagen"
-                        width=""
-                        class="card_imagen"
-                        alt=""
-                    />
-                    <h5 class="card-title titulo">{{ producto.producto }}</h5>
-                    <p class="card-text">${{ producto.precio }}</p>
-                    <button
-                        class="btn btn-primary"
-                        data-bs-target="#exampleModalToggle"
-                        data-bs-toggle="modal"
-                    >
-                        Editar
-                    </button>
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+        ...
+        <div class="row mt-4">
+            <div class="COL-12">
+                <div class="row row-cols-md-4 g-3 ms-5">
+                    @for (producto of dataProductos; track $index) {
+                        <div class="card m-1 card_prodcutos">
+                            <div class="p-1 card-body text-start">
+                                <img [src]="producto.imagen" width="" class="card_imagen rounded-2" alt="" />
+                                <h5 class="card-title titulo">{{ producto.producto }}</h5>
+                                <p class="card-text">${{ producto.precio }}</p>
+                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Editar</button>
+                                <button class="btn btn-danger ms-5 " (click)="eliminarproducto(producto._id)">Eliminar</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <button class="btn btn-primary ms-5 mt-2" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">AGREGAR</button>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content ms">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-4" id="exampleModalToggleLabel">AGREGA TU PRODUCTO</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" n></button>
+                    </div>
+                    <div class="modal-body">
+                        <app-formulario class="productos"></app-formulario>
+                    </div>
                 </div>
             </div>
-            }
-        </div>
-        <button
-            class="btn btn-primary ms-5 mt-2"
-            data-bs-target="#exampleModalToggle"
-            data-bs-toggle="modal"
-        >
-            AGREGAR
-        </button>
-    </div>
-</div>
-<div
-    class="modal fade"
-    id="exampleModalToggle"
-    aria-hidden="true"
-    aria-labelledby="exampleModalToggleLabel"
-    tabindex="-1"
->
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content ms">
-            <div class="modal-header">
-                <h1 class="modal-title fs-4" id="exampleModalToggleLabel">
-                    AGREGA TU PRODUCTO
-                </h1>
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"n
-                ></button>
-            </div>
-            <div class="modal-body">
-                <app-formulario class="productos"></app-formulario>
-            </div>
         </div>
     </div>
-</div></div>
     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
-
 </div>
-

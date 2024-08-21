@@ -6,7 +6,6 @@
     width: 240px;
     height: 200px;
 }
-
 .boton-ejemplo{
     width: 30px;
     height:30px;
@@ -30,16 +29,6 @@
 .boton-ejemplo:hover i{
     transform: rotate(90deg);
 }
-
-
-.barra-pedidos{
-    width: 500px !important;
-    height: 620px !important;
-    margin-top: 10px !important;
-    border: none;
-    border-radius: 15px;
-    background: #e0e0e0;
-}
 .linea{
     height: 1px;
     width: 400px;
@@ -60,10 +49,56 @@
 
 }
 
-.mas_menos{
-    height: 40px !important;
+.text-producto {
+    flex-grow: 1; /* Hace que el texto ocupe todo el espacio disponible */
+    margin-right: 10px; /* Ajusta el margen entre el texto y los botones */
+    text-align: left; /* Alinea el texto a la izquierda */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    overflow: hidden; /* Oculta el desbordamiento del texto si es muy largo */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
 }
 
-.boton-pedido{
-    margin-right: 300px;
+.btn-group-mas-menos {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.mas_menos {
+    height: 40px !important;
+    width: 40px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barra-pedidos {
+    width: 500px !important;
+    height: 620px !important;
+    margin-top: 10px !important;
+    border: none;
+    border-radius: 15px;
+    background: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.productos-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: calc(100% - 150px); /* Ajusta según el espacio que ocupa el total y el botón */
+    margin-bottom: 20px; /* Espacio para el botón */
+}
+
+.boton-pedido {
+    align-self: flex-start;
+    margin-left: 10px;
+    margin-top: auto;
+    position: relative;
+    bottom: 10px;
+}
+.botonpagp{
+    background: #009F10;
 }

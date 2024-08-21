@@ -3,7 +3,11 @@
     --color-morado:#2e017c;
 
 }
-
+.logo{
+    height: 30px !important;
+    width: 50px;
+    margin-top: 5px;
+}
 
 
 .buscar{

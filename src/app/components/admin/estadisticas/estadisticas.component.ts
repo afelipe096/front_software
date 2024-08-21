@@ -200,6 +200,9 @@ export class EstadisticasComponent implements AfterViewInit {
 
 
     }
+
+
+
     }
 
 
