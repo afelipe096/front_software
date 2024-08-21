@@ -1,1 +1,65 @@
-<p>formulario-registro works!</p>
+<div
+    class="modal fade"
+    id="exampleModalToggle"
+    aria-hidden="true"
+    aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1"
+>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalToggleLabel">
+                    Registro
+                </h1>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="registro" class="row g-3" (submit)="Registro()">
+                    <div class="col-md-6">
+                        <label for="username" class="form-label">Nombre Usuario</label>
+                        <input type="text" class="form-control" id="username" required formControlName="username">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="firstName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="firstName" required formControlName="name">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lastName" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="lastName" required  formControlName="lastName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" required  formControlName="email">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" required  formControlName="password">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" id="phone" required  formControlName="phone">
+                    </div>
+
+
+                    <div class="col-12">
+                        <button class="btn btn-success" data-bs-target="#loginModal" data-bs-toggle="modal"   type="submit" >Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button
+    class="btn btn-success"
+    data-bs-target="#exampleModalToggle"
+    data-bs-toggle="modal"
+>
+    Registrate
+</button>

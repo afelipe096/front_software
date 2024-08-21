@@ -46,6 +46,9 @@ export class FormularioProductosComponent {
             console.log(data);
             alert('producto creado con exito')
 
+            setTimeout(() => {
+                location.reload()
+            },500);
         })
     }
 
