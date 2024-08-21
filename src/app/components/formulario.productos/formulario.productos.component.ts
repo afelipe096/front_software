@@ -2,13 +2,16 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApiGeneralService } from '../../services/api-general.service';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
+
+
 
 @Component({
     selector: 'app-formulario.productos',
     standalone: true,
     imports: [
         ReactiveFormsModule,
-        CommonModule
+        CommonModule,
 
     ],
     templateUrl: './formulario.productos.component.html',
@@ -52,5 +55,25 @@ export class FormularioProductosComponent {
         })
     }
 
+    eliminarGenero(id: string) {
+        Swal.fire({
+            title: "Esta seguro de eliminar el genero",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Eliminar",
+            cancelButtonText: "Cancelar"
+        }).then((result: any) => {
+            if (result.isConfirmed) {
+                this._apiServicio.deleteProducto(id).subscribe((data: any) => {
+                    this.guardarInformacion();
+                });
+                Swal.fire({
+                    title: "producto eliminado correctamente",
+                });
+            }
+        });
+    }
 
 }

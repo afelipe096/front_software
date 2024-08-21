@@ -30,8 +30,13 @@ export class ApiGeneralService {
         return this.http.get(`${this.urlApi}/obtener-productos`)
     }
 
+    deleteProducto(id: string){
+        return this.http.delete(`${this.urlApi}/eliminar-producto/${id}`)
+    }
+
     putmodificarInventario(inventarioData:inventario) {
         return this.http.put(`${this.urlApi}/modificar-inventario/:id`,inventarioData)
     }
+
 
 }
