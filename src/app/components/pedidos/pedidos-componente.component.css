@@ -1,0 +1,41 @@
+.buscar{
+    background-color: var(--color-gris);
+}
+
+.buscar:hover{
+    background-color: #b1b1b1;
+}
+
+.cajita{
+    padding-top: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.texto3{
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.linea{
+    border: 1px solid #dbd5d5;
+    margin-bottom: 30px;
+}
+
+.icono1{
+    color: #15e765;
+    font-size: 2rem;
+}
+
+.letra4{
+    font-weight: bold;
+    padding-left: 10px;
+    text-align: center;
+}
+
+.icono2{
+    color: #ff0000;
+    font-size: 2rem;
+    padding-right: 5px;
+}
