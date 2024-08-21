@@ -87,8 +87,13 @@ export class VentasComponent {
     confirmarPago() {
         let comprasGuardadas = JSON.parse(localStorage.getItem('compras') || '[]');
 
-        // Agregar el nuevo valor de totalCompra a la lista
-        comprasGuardadas.push(this.totalCompra);
+        // Agregar el nuevo pedido con sus detalles y el total de la compra
+        const nuevaCompra = {
+            detalles: this.carritoActual.map((producto: any) => `${producto.nombre} x${producto.cantidad}`),
+            total: this.totalCompra
+        };
+
+        comprasGuardadas.push(nuevaCompra);
 
         // Guardar nuevamente la lista en el localStorage
         localStorage.setItem('compras', JSON.stringify(comprasGuardadas));

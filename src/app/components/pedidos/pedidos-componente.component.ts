@@ -11,19 +11,36 @@ import { Component } from '@angular/core';
     styleUrl: './pedidos-componente.component.css'
 })
 export class PedidosComponenteComponent {
-    comprasGuardadas: number[] = [];
+    comprasGuardadas: { detalles: string; total: number }[] = [];
 
-    ngOnInit() {
-        // Recuperar la lista de compras del localStorage
-        const compras = JSON.parse(localStorage.getItem('compras') || '[]');
-        this.comprasGuardadas = compras;
+    constructor() { }
+
+    ngOnInit(): void {
+        this.loadCompras();
     }
-    eliminarCompra(indice: number) {
-        // Eliminar el elemento en el índice especificado
-        this.comprasGuardadas.splice(indice, 1);
 
-        // Actualizar el localStorage con la nueva lista
+    agregarCompra(detalles: string, total: number): void {
+        const nuevaCompra = {
+            detalles,
+            total
+        };
+        this.comprasGuardadas.push(nuevaCompra);
+        this.saveCompras();
+    }
+
+    eliminarCompra(index: number): void {
+        this.comprasGuardadas.splice(index, 1);
+        this.saveCompras();
+    }
+
+    saveCompras(): void {
         localStorage.setItem('compras', JSON.stringify(this.comprasGuardadas));
     }
-}
 
+    loadCompras(): void {
+        const storedCompras = localStorage.getItem('compras');
+        if (storedCompras) {
+            this.comprasGuardadas = JSON.parse(storedCompras);
+        }
+    }
+}
