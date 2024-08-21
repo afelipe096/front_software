@@ -40,7 +40,7 @@ export class FormularioRegistroComponent {
             ],
             lastName: [
                 '',
-                [Validators.required, Validators.pattern(this.regexEmail)],
+                [Validators.required, Validators.pattern(this.regexAlfa)],
               ],
               email: [
                 '',
@@ -85,4 +85,10 @@ export class FormularioRegistroComponent {
             }
           );
         }
-}
+
+
+
+
+ }
+
+

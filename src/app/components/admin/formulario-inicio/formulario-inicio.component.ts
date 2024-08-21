@@ -54,27 +54,25 @@ export class FormularioInicioComponent {
         location.reload();
     }
 
-    Inicio(){
+    Inicio() {
         console.log(this.inicio.value);
 
         this._api.Login(this.inicio.value).subscribe(
             (respuestaAPI) => {
-              Swal.fire({
-                title: 'Ha iniciado session correctamente!',
-                icon: 'success',
-              });
-              let dataApi: any = respuestaAPI;
-              console.log(respuestaAPI);
-              setTimeout(() => {
-                this.router.navigate(['crear-producto']);
-              }, 2000);
+                Swal.fire({
+                    title: '¡Has iniciado sesión correctamente!',
+                    icon: 'success',
+                }).then(() => {
+                    this.router.navigate(['ventas']); // Redirige inmediatamente
+                });
             },
             (error) => {
-              Swal.fire({
-                title: 'No se pudo iniciar sesion!',
-                icon: 'error',
-              });
+                Swal.fire({
+                    title: '¡No se pudo iniciar sesión!',
+                    icon: 'error',
+                });
             }
-          );
-        }
+        );
+    }
+
 }
