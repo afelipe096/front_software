@@ -55,7 +55,24 @@
 .logos{
     height: 70px;
 }
+.video{
+    margin-bottom: 20px;
+
+}
+.p-escribeme{
+    font-size: 40px;
+    line-height: 40px;
+    width: 460px;
+    color: #009F10;
+    margin-top: 20px;
+}
+.input-escribenos{
+    width: 280px;
+    margin-top: 80px;
+}
+.logos{
+    height: 70px;
+}
 .logosx{
     height: 60px;
 }
-

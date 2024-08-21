@@ -19,58 +19,36 @@
                 ></button>
             </div>
             <div class="modal-body">
-                <form class="row g-3">
+                <form [formGroup]="registro" class="row g-3" (submit)="Registro()">
+                    <div class="col-md-6">
+                        <label for="username" class="form-label">Nombre Usuario</label>
+                        <input type="text" class="form-control" id="username" required formControlName="username">
+                    </div>
                     <div class="col-md-6">
                         <label for="firstName" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="firstName" required>
+                        <input type="text" class="form-control" id="firstName" required formControlName="name">
                     </div>
                     <div class="col-md-6">
                         <label for="lastName" class="form-label">Apellido</label>
-                        <input type="text" class="form-control" id="lastName" required>
+                        <input type="text" class="form-control" id="lastName" required  formControlName="lastName">
                     </div>
                     <div class="col-md-6">
                         <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" id="email" required  formControlName="email">
                     </div>
-                    <div class="col-md-6">
-                        <label for="confirmEmail" class="form-label">Confirmar correo electrónico</label>
-                        <input type="email" class="form-control" id="confirmEmail" required>
-                    </div>
+
                     <div class="col-md-6">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="password" required>
+                        <input type="password" class="form-control" id="password" required  formControlName="password">
                     </div>
                     <div class="col-md-6">
-                        <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
-                        <input type="password" class="form-control" id="confirmPassword" required>
+                        <label for="phone" class="form-label">Telefono</label>
+                        <input type="text" class="form-control" id="phone" required  formControlName="phone">
                     </div>
-                    <div class="col-md-6">
-                        <label for="phone" class="form-label">Celular</label>
-                        <input type="tel" class="form-control" id="phone" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="country" class="form-label">País</label>
-                        <select class="form-select" id="country" required>
-                            <option selected disabled value="">Seleccione...</option>
-                            <option value="country1">País 1</option>
-                            <option value="country2">País 2</option>
-                            <!-- Agregar más opciones según sea necesario -->
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="city" class="form-label">Ciudad</label>
-                        <input type="text" class="form-control" id="city" required>
-                    </div>
+
+
                     <div class="col-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="termsCheck" required>
-                            <label class="form-check-label" for="termsCheck">
-                                Acepto los términos y condiciones
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-success" type="submit">Registrar</button>
+                        <button class="btn btn-success" data-bs-target="#loginModal" data-bs-toggle="modal"   type="submit" >Registrar</button>
                     </div>
                 </form>
             </div>

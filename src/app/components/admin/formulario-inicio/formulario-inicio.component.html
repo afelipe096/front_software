@@ -20,14 +20,19 @@
                 ></button>
             </div>
             <div class="modal-body">
-                <form>
+
+                <form [formGroup]="inicio" class="row g-3" (submit)="Inicio()">
                     <div class="mb-3">
                         <label for="loginEmail" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="loginEmail" required>
+                        <input type="email" class="form-control" id="loginEmail" required formControlName="email">
+                    </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de Usuario</label>
+                            <input type="text" class="form-control" id="username" required formControlName="username">
                     </div>
                     <div class="mb-3">
                         <label for="loginPassword" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="loginPassword" required>
+                        <input type="password" class="form-control" id="loginPassword" required formControlName="password">
                     </div>
                     <div class="d-flex justify-content-center mb-3">
                         <button type="submit" class="btn btn-success w-75">Iniciar sesión</button>
@@ -41,10 +46,7 @@
     </div>
 </div>
 
-<button
-    class="nav-link text-dark"
-    data-bs-target="#loginModal"
-    data-bs-toggle="modal"
+<button type="submit"class="nav-link text-dark" data-bs-target="#loginModal" data-bs-toggle="modal"
 >
     inicio de sesión
 </button>

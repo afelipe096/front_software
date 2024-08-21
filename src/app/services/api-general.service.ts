@@ -15,12 +15,12 @@ export class ApiGeneralService {
 
     constructor(private http: HttpClient) { }
 
-    obtenerStatusLogin() {
-        return this.seLogueo
+    Login(data: any) {
+        return this.http.post(`${this.urlApi}/login`, data);
     }
 
     postRegistroUsuario(data: any) {
-        return this.http.post(`${this.urlApi}/crear-usuario`, data)
+        return this.http.post(`${this.urlApi}/register`, data)
     }
 
     postCrearProductos(dataProducto: productos) {
@@ -37,5 +37,8 @@ export class ApiGeneralService {
     putmodificarInventario(inventarioData:inventario) {
         return this.http.put(`${this.urlApi}/modificar-inventario/:id`,inventarioData)
     }
+
+////////validacion
+
 
 }
