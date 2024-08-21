@@ -33,9 +33,10 @@ export class AgregarProductoComponent {
         }) ;
 
     }
-    eliminarGenero(id: string) {
+    eliminarproducto(id: string) {
+        console.log('ID del producto a eliminar:',id);  // Verifica que el ID no es undefined
         Swal.fire({
-            title: "Esta seguro de eliminar el genero",
+            title: "¿Está seguro de eliminar el producto?",
             icon: "question",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
@@ -44,13 +45,15 @@ export class AgregarProductoComponent {
             cancelButtonText: "Cancelar"
         }).then((result: any) => {
             if (result.isConfirmed) {
-                this._api.deleteProducto(id).subscribe((data: any) => {
-                    this.obtenerProductos();
+                this._api.deleteProducto(id).subscribe(() => {
+                    this.obtenerProductos(); // Refrescar la lista de productos después de eliminar uno
                 });
                 Swal.fire({
-                    title: "producto eliminado correctamente",
+                    title: "Producto eliminado correctamente",
+                    icon: "success"
                 });
             }
         });
     }
+
 }
