@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ApiGeneralService } from '../../../services/api-general.service';
 import { FormularioProductosComponent } from '../../formulario.productos/formulario.productos.component';
 import { CommonModule } from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-agregar-producto',
@@ -32,5 +33,24 @@ export class AgregarProductoComponent {
         }) ;
 
     }
-
+    eliminarGenero(id: string) {
+        Swal.fire({
+            title: "Esta seguro de eliminar el genero",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Eliminar",
+            cancelButtonText: "Cancelar"
+        }).then((result: any) => {
+            if (result.isConfirmed) {
+                this._api.deleteProducto(id).subscribe((data: any) => {
+                    this.obtenerProductos();
+                });
+                Swal.fire({
+                    title: "producto eliminado correctamente",
+                });
+            }
+        });
+    }
 }

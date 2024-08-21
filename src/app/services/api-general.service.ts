@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { inventario, productos } from '../components/models/productos';
 
+
 @Injectable({
     providedIn: 'root'
 })
@@ -28,6 +29,10 @@ export class ApiGeneralService {
 
     getObtenerProductos() {
         return this.http.get(`${this.urlApi}/obtener-productos`)
+    }
+
+    deleteProducto(id: string){
+        return this.http.delete(`${this.urlApi}/eliminar-producto/${id}`)
     }
 
     putmodificarInventario(inventarioData:inventario) {
