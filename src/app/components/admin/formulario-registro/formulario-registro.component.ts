@@ -25,32 +25,47 @@ export class FormularioRegistroComponent {
     regexcontraseña= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10}$/;
     regexEmail =
     /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}/;
-
+    regexInput = /^(?!\s*$).+/
 
 
     constructor(private router: Router, private fb: FormBuilder, private _api:ApiGeneralService) {
         this.registro = this.fb.group({
             username: [
                 '',
-                [Validators.required, Validators.pattern(this.regexAlfa)],
+                [Validators.required,
+                    Validators.pattern(this.regexAlfa),
+                    Validators.pattern(this.regexInput)
+                ],
               ],
+
+
             name: [
               '',
-              [Validators.required, Validators.pattern(this.regexAlfa)],
+              [Validators.required, Validators.pattern(this.regexAlfa),
+                Validators.pattern(this.regexInput)
+              ],
             ],
             lastName: [
                 '',
-                [Validators.required, Validators.pattern(this.regexAlfa)],
+                [Validators.required, Validators.pattern(this.regexAlfa),
+                    Validators.pattern(this.regexInput)
+                ],
               ],
               email: [
                 '',
-                [Validators.required, Validators.pattern(this.regexEmail)],
+                [Validators.required, Validators.pattern(this.regexEmail),
+                    Validators.pattern(this.regexInput)
+                ],
               ],
 
 
-            password: ['', [Validators.required, Validators.pattern(this.regexcontraseña)]],
+            password: ['', [Validators.required, Validators.pattern(this.regexcontraseña),
+                Validators.pattern(this.regexInput)
+            ]],
 
-            phone: ['', [Validators.required, Validators.minLength(10)]]
+            phone: ['', [Validators.required, Validators.minLength(10),
+                Validators.pattern(this.regexInput)
+            ]]
 
 
           });

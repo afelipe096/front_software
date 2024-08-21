@@ -25,23 +25,29 @@ export class FormularioInicioComponent {
     regexcontraseña= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10}$/;
     regexEmail =
     /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}/;
-
+    regexInput = /^(?!\s*$).+/
 
 
     constructor(private router: Router, private fb: FormBuilder, private _api:ApiGeneralService) {
         this.inicio = this.fb.group({
             username: [
                 '',
-                [Validators.required, Validators.pattern(this.regexAlfa)],
+                [Validators.required, Validators.pattern(this.regexAlfa),
+                    Validators.pattern(this.regexInput)
+                ],
               ],
 
               email: [
                 '',
-                [Validators.required, Validators.pattern(this.regexEmail)],
+                [Validators.required, Validators.pattern(this.regexEmail),
+                    Validators.pattern(this.regexInput)
+                ],
               ],
 
 
-            password: ['', [Validators.required, Validators.pattern(this.regexcontraseña)]],
+            password: ['', [Validators.required, Validators.pattern(this.regexcontraseña),
+                Validators.pattern(this.regexInput)
+            ]],
 
 
 
@@ -63,9 +69,12 @@ export class FormularioInicioComponent {
                     title: '¡Has iniciado sesión correctamente!',
                     icon: 'success',
                 }).then(() => {
-                    this.router.navigate(['ventas']); // Redirige inmediatamente
+                    this.router.navigate(['crear-producto']); // Redirige inmediatamente
                 });
+                localStorage.setItem("user", JSON.stringify(this.inicio.value))
+                location.reload();
             },
+
             (error) => {
                 Swal.fire({
                     title: '¡No se pudo iniciar sesión!',

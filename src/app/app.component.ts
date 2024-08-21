@@ -20,13 +20,14 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class AppComponent {
     title = 'proyecto_jas';
-    usuarioLoguiado:any
+    usuarioLoguiado: any = null;
 
-    constructor(private _servicioApi: ApiGeneralService){
+    constructor(private _servicioApi: ApiGeneralService) { }
 
+    ngOnInit(): void {
+        const user = localStorage.getItem("user");
+        if (user) {
+            this.usuarioLoguiado = JSON.parse(user);
+        }
     }
-
-    // ngOnInit():void{
-    //     this.usuarioLoguiado = this._servicioApi.Login()
-    // }
 }
